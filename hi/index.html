@@ -2,9 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>
-404 | 
-</title>
+    <title></title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -17,19 +15,18 @@
     
     <link rel="stylesheet" href="https://vivl.im/font-hack-subset.css">
 
-    
-    <meta name="description" content="Page not found">
+    <meta name="description" content="">
 
-    <meta property="og:description" content="Page not found">
+    <meta property="og:description" content="">
     <meta property="og:title" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vivl.im">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://vivl.im/hi/">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:description" content="Page not found">
+    <meta name="twitter:description" content="">
     <meta name="twitter:title" content="">
     <meta property="twitter:domain" content="vivl.im">
-    <meta property="twitter:url" content="https://vivl.im">
+    <meta property="twitter:url" content="https://vivl.im/hi/">
 
             
         <link rel="alternate" type="application/atom+xml" title="RSS" href="https://vivl.im/atom.xml">
@@ -56,9 +53,10 @@
         </div>
 
         
-<nav class="menu">
+        
+                <nav class="menu">
             <ul class="menu__inner">
-                <li><a href="https://vivl.im">blog</a></li>
+                <li class="active"><a href="https://vivl.im">blog</a></li>
             
                 <li><a href="https://vivl.im/tags">tags</a></li>
             
@@ -68,16 +66,45 @@
             </ul>
         </nav>
     
-
+    
+        
     </header>
     
 
     <div class="content">
         
-<div class="post">
-  <h1 class="post-title">Lost?</h1>
-  <p>This page does not exist.</p>
-</div>
+    <div class="post">
+        
+    <h1 class="post-title"><a href="https://vivl.im/hi/">Okay it&#x27;s website again</a></h1>
+    <div class="post-meta-inline">
+        
+    <span class="post-date">
+            2024-05-17
+        </span>
+
+    </div>
+
+    
+        <span class="post-tags-inline">
+                :: tags:&nbsp;
+                <a class="post-tag" href="https://vivl.im/tags/meta/">#meta</a></span>
+    
+
+        <div class="post-content">
+            <p>I haven't had a functioning blog setup in years, and tonight I finally sat down and spent a couple hours throwing something together. Read on for how it's put together</p>
+<span id="continue-reading"></span>
+<p>well. there isn't anything here yet, sorry.</p>
+<p>I wanted to inline the contents of my publishing action, but I can't just drop this into a post: :(</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>{% set publishyml = load_data(path=&quot;.github/workflows/publish.yml&quot;, required=true) %}
+</span><span>
+</span><span>{{ data[&quot;publishyml&quot;] }}
+</span></code></pre>
+<p>i'll need to extend the template for that, i guess</p>
+
+        </div>
+
+        
+    </div>
 
     </div>
 
