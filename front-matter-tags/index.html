@@ -112,6 +112,7 @@
 </span><span style="color:#bf616a;">date</span><span>: </span><span style="color:#d08770;">2024-05-17
 </span><span>---
 </span></code></pre>
+<p>I'd really like <em>that</em> to just work without any additional steps, because that lowers the effort needed to write posts. Ideally I'd like to have the option to edit using Obsidian on my desktop <em>or</em> phone with the <em>option</em> to preview with <code>zola serve</code> but Obsidian's markdown preview being accurate in a pinch. (todo: reword this when I haven't just woken up)</p>
 <p>one option i could have taken is to patch the markdown files to move <code>tags</code> into <code>taxonomies</code> at build time, but that would mean I wouldn't be able to use <code>zola serve</code> &amp; see changes locally that involved tags. that's the direction <a href="https://zola.discourse.group/t/migrating-from-another-blog-engine-zola-could-be-more-lenient-with-the-frontmatter-especially-around-taxonomies/1591">this thread I found</a> went in.</p>
 <p>another option is to switch away from zola to a different static site generator, but i wasn't feeling that, i'd rather work with zola since i have more experience with rust and tera.</p>
 <p>so instead i <a href="https://github.com/vivlim/zolra">forked zola</a> and <a href="https://github.com/vivlim/zolra/commit/5f8a4b178d62259e0423360b44c8fa4bd87bd490">hacked in top-level tags</a>  for myself to use.</p>
