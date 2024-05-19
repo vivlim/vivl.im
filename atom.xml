@@ -1,19 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title></title>
-    <link href="https://vivl.im/atom.xml" rel="self" type="application/atom+xml"/>
-    <link href="https://vivl.im"/>
+    <link rel="self" type="application/atom+xml" href="https://vivl.im/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://vivl.im"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2024-05-17T00:00:00+00:00</updated>
+    <updated>2024-05-18T00:00:00+00:00</updated>
     <id>https://vivl.im/atom.xml</id>
+    <entry xml:lang="en">
+        <title>A Front Matter</title>
+        <published>2024-05-18T00:00:00+00:00</published>
+        <updated>2024-05-18T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://vivl.im/front-matter-tags/"/>
+        <id>https://vivl.im/front-matter-tags/</id>
+        
+        <content type="html" xml:base="https://vivl.im/front-matter-tags/">&lt;p&gt;I was initially using &lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;zola&lt;&#x2F;a&gt; but then learned that it doesn&#x27;t support top-level tags in front matter. zola expects &lt;code&gt;tags&lt;&#x2F;code&gt; to be within &lt;code&gt;taxonomies&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;yaml&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-yaml &quot;&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span&gt;---
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;title&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;Okay it&amp;#39;s website again
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;date&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;2024-05-17
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;taxonomies&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;tags&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;  - &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;meta
+&lt;&#x2F;span&gt;&lt;span&gt;---
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;if I put &lt;code&gt;tags&lt;&#x2F;code&gt; under &lt;code&gt;taxonomies&lt;&#x2F;code&gt; it&#x27;s OK.&lt;&#x2F;p&gt;
+&lt;p&gt;but I want to draft posts in Obsidian, and &lt;em&gt;that&lt;&#x2F;em&gt; expects tags to be at the top level, and gives me some nice ui for setting them:&lt;&#x2F;p&gt;
+&lt;p&gt;![[Pasted image 20240519004719.png]]&lt;&#x2F;p&gt;
+&lt;p&gt;that ui represents this:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;yaml&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-yaml &quot;&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span&gt;---
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;tags&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;  - &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;meta
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;title&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;Okay it&amp;#39;s website again
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;date&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;2024-05-17
+&lt;&#x2F;span&gt;&lt;span&gt;---
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;one option i could have taken is to patch the markdown files to move &lt;code&gt;tags&lt;&#x2F;code&gt; into &lt;code&gt;taxonomies&lt;&#x2F;code&gt; at build time, but that would mean I wouldn&#x27;t be able to use &lt;code&gt;zola serve&lt;&#x2F;code&gt; &amp;amp; see changes locally that involved tags. that&#x27;s the direction &lt;a href=&quot;https:&#x2F;&#x2F;zola.discourse.group&#x2F;t&#x2F;migrating-from-another-blog-engine-zola-could-be-more-lenient-with-the-frontmatter-especially-around-taxonomies&#x2F;1591&quot;&gt;this thread I found&lt;&#x2F;a&gt; went in.&lt;&#x2F;p&gt;
+&lt;p&gt;another option is to switch away from zola to a different static site generator, but i wasn&#x27;t feeling that, i&#x27;d rather work with zola since i have more experience with rust and tera.&lt;&#x2F;p&gt;
+&lt;p&gt;so instead i &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vivlim&#x2F;zolra&quot;&gt;forked zola&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vivlim&#x2F;zolra&#x2F;commit&#x2F;5f8a4b178d62259e0423360b44c8fa4bd87bd490&quot;&gt;hacked in top-level tags&lt;&#x2F;a&gt;  for myself to use.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Okay it&#x27;s website again</title>
         <published>2024-05-17T00:00:00+00:00</published>
         <updated>2024-05-17T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://vivl.im/hi/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://vivl.im/hi/"/>
         <id>https://vivl.im/hi/</id>
         
         <summary type="html">&lt;p&gt;I haven&#x27;t had a functioning blog setup in years, and tonight I finally sat down and spent a couple hours throwing something together. Read on for how it&#x27;s put together&lt;&#x2F;p&gt;

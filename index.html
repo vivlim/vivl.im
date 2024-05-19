@@ -76,6 +76,53 @@
         <div class="posts">
                 <div class="post on-list">
                     
+    <h1 class="post-title"><a href="https://vivl.im/front-matter-tags/">A Front Matter</a></h1>
+    <div class="post-meta-inline">
+        
+    <span class="post-date">
+            2024-05-18
+        </span>
+
+    </div>
+
+    
+        <span class="post-tags-inline">
+                :: tags:&nbsp;
+                <a class="post-tag" href="https://vivl.im/tags/meta/">#meta</a></span>
+    
+
+
+                    <div class="post-content">
+            <p>I was initially using <a href="https://www.getzola.org/">zola</a> but then learned that it doesn't support top-level tags in front matter. zola expects <code>tags</code> to be within <code>taxonomies</code></p>
+<pre data-lang="yaml" style="background-color:#2b303b;color:#c0c5ce;" class="language-yaml "><code class="language-yaml" data-lang="yaml"><span>---
+</span><span style="color:#bf616a;">title</span><span>: </span><span style="color:#a3be8c;">Okay it&#39;s website again
+</span><span style="color:#bf616a;">date</span><span>: </span><span style="color:#d08770;">2024-05-17
+</span><span style="color:#bf616a;">taxonomies</span><span>:
+</span><span>  </span><span style="color:#bf616a;">tags</span><span>:
+</span><span>  - </span><span style="color:#a3be8c;">meta
+</span><span>---
+</span></code></pre>
+<p>if I put <code>tags</code> under <code>taxonomies</code> it's OK.</p>
+<p>but I want to draft posts in Obsidian, and <em>that</em> expects tags to be at the top level, and gives me some nice ui for setting them:</p>
+<p>![[Pasted image 20240519004719.png]]</p>
+<p>that ui represents this:</p>
+<pre data-lang="yaml" style="background-color:#2b303b;color:#c0c5ce;" class="language-yaml "><code class="language-yaml" data-lang="yaml"><span>---
+</span><span style="color:#bf616a;">tags</span><span>:
+</span><span>  - </span><span style="color:#a3be8c;">meta
+</span><span style="color:#bf616a;">title</span><span>: </span><span style="color:#a3be8c;">Okay it&#39;s website again
+</span><span style="color:#bf616a;">date</span><span>: </span><span style="color:#d08770;">2024-05-17
+</span><span>---
+</span></code></pre>
+<p>one option i could have taken is to patch the markdown files to move <code>tags</code> into <code>taxonomies</code> at build time, but that would mean I wouldn't be able to use <code>zola serve</code> &amp; see changes locally that involved tags. that's the direction <a href="https://zola.discourse.group/t/migrating-from-another-blog-engine-zola-could-be-more-lenient-with-the-frontmatter-especially-around-taxonomies/1591">this thread I found</a> went in.</p>
+<p>another option is to switch away from zola to a different static site generator, but i wasn't feeling that, i'd rather work with zola since i have more experience with rust and tera.</p>
+<p>so instead i <a href="https://github.com/vivlim/zolra">forked zola</a> and <a href="https://github.com/vivlim/zolra/commit/5f8a4b178d62259e0423360b44c8fa4bd87bd490">hacked in top-level tags</a>  for myself to use.</p>
+
+        </div>
+
+                </div>
+            
+                <div class="post on-list">
+                    
     <h1 class="post-title"><a href="https://vivl.im/hi/">Okay it&#x27;s website again</a></h1>
     <div class="post-meta-inline">
         
